@@ -1,0 +1,51 @@
+.input-name {
+    width: 300px !important;
+    margin: 0 auto;
+    height: 50px !important;
+}
+
+.btn-start {
+    width: 300px;
+    height: 40px !important;
+    padding: 0 !important;
+}
+
+.timer-count-fav {
+    font-size: 22px;
+}
+
+.options {
+    border: none;
+}
+
+.options > li {
+    cursor: pointer;
+}
+
+/*.options > li:hover {*/
+/*    background-color: #6088dd;*/
+/*}*/
+
+.errorBorder {
+    border: 1px solid #e60606 !important;
+}
+
+.selected, .correct, .incorrect {
+    color: #fff;
+}
+
+.selected {
+    background-color: #6088dd;
+}
+
+.correct {
+    background-color: #3ac742;
+}
+
+.incorrect {
+    background-color: #e52222;
+}
+
+.btn-submit {
+    width: 20%;
+}

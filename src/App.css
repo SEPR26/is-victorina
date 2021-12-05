@@ -1,43 +1,17 @@
 p {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 ul {
-  padding: 0;
-  border: 1px solid #9e9898;
+    padding: 0;
+    border: 1px solid #9e9898;
 }
 
 li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
-.options > li {
-  border-bottom: 1px solid #9e9898;
-}
-
-.options > li:last-child {
-  border-bottom: 0;
-}
-
-.errorBorder {
-  border: 1px solid #e60606;
-}
-
-.selected,
-.correct,
-.incorrect {
-  color: #fff;
-}
-
-.selected {
-  background-color: #2d68e7;
-}
-
-.correct {
-  background-color: #13e71e;
-}
-
-.incorrect {
-  background-color: #f00a0a;
+h3 {
+    margin-bottom: 0 !important;
 }

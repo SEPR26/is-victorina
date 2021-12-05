@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { timerHelper } from "../helpers";
+import { timerHelper } from "../../helpers";
 
-export const LidersBoards = () => {
+export const LeadersBoards = () => {
   const records = JSON.parse(localStorage.getItem("records")) || [];
   const liders = records
     .sort((cur, next) => cur.seconds - next.seconds)
