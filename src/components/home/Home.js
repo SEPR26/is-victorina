@@ -30,11 +30,10 @@ export const Home = () => {
     const correctAnsCount = correctAnswers.length;
 
     const getQuestions = () => {
-        const isEmptyName = userName === '';
+        const isEmptyName = userName.trim() === '';
 
         if (!isEmptyName) {
             const questions = api.getQuestions(5);
-
             setEditable(false);
             setActiveTimer(true);
             setQuestions(questions);
@@ -51,7 +50,15 @@ export const Home = () => {
     };
 
     const handleNameInput = (e) => {
+        e.preventDefault();
         setUserName(e.target.value);
+    };
+
+    const handleDownEnter = (e) => {
+        if (e.key === 'Enter') {
+            getQuestions();
+            setUserName(e.target.value);
+        }
     };
 
     const handleSelect = (id, answer) => () => {
@@ -112,18 +119,15 @@ export const Home = () => {
             {(editable &&
                 <div className='text-center mb-2'>
                     <h1 className='text-primary mt-5 p-3 rounded'>Введите имя</h1>
-                    <Form>
-                        <Form.Group>
-                            <Form.Control
-                                value={userName}
-                                disabled={!editable}
-                                onChange={handleNameInput}
-                                type="text"
-                                className={`${validErr ? 'errorBorder' : ''} input-name`}
-                            />
-                            {validErr && <p className='text-danger'>Это обязательное поле *</p>}
-                        </Form.Group>
-                    </Form>
+                    <Form.Control
+                        value={userName}
+                        disabled={!editable}
+                        onChange={handleNameInput}
+                        onKeyPress={handleDownEnter}
+                        type="text"
+                        className={`${validErr ? 'errorBorder' : ''} input-name`}
+                    />
+                    {validErr && <p className='text-danger'>Это обязательное поле *</p>}
                 </div>)}
             <div>
                 {hasAnswers && <div className='timer-count-fav'>Правильных ответов - {correctAnsCount}</div>}
@@ -146,7 +150,7 @@ export const Home = () => {
                                     <div className='text-left mb-2'>
                                         {answerChecker(q.id)
                                             ? <h5 className='text-success pl-3'>Ответ верный</h5>
-                                            : <h5 className='text-danger pl-3'>Ваш ответ не верный либо вы  не ответили</h5>
+                                            : <h5 className='text-danger pl-3'>Ответ не верный</h5>
                                         }
                                     </div>
                                 )}

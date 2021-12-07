@@ -22,9 +22,9 @@
     cursor: pointer;
 }
 
-/*.options > li:hover {*/
-/*    background-color: #6088dd;*/
-/*}*/
+.options > li:hover {
+    background-color: #e0e2e8;
+}
 
 .errorBorder {
     border: 1px solid #e60606 !important;
